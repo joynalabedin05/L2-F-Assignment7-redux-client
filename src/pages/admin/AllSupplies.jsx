@@ -64,7 +64,7 @@ const AllSupplies = () => {
                 {/* row 1 */}
                 {
                     
-                    data.map((item, i)=>                  
+                    data?.map((item, i)=>                  
                     <tr key={item._id}>                 
                     
                     <td>

@@ -1,11 +1,14 @@
 import {  FaEuroSign, FaGlobe } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import food from '../assets/healthyfood.jpg';
+import { useSelector } from "react-redux";
 
 
 const Footer = () => {
+    const { darkMode } = useSelector((store) => store.theme);
+
     return (
-        <div className="bg-slate-200 p-3 md:px-14 md:py-10">
+        <div className={`bg-gray-100 ${darkMode ? "bg-black text-white" : ""} p-3 md:px-14 md:py-10`}>
             <div className="grid md:grid-cols-3 lg:grid-cols-5">
             <div>
                 <img className="w-[100px] rounded" src={food} alt="" />
@@ -48,7 +51,7 @@ const Footer = () => {
                 </div>
                              
             </div>
-            <div className="bg-slate-200 p-5 rounded-md md:flex justify-between mt-10 ">
+            <div className=" p-5 rounded-md md:flex justify-between mt-10 ">
                 <p className="text-sm"> &copy; 2023. All rights reserved.</p>
                 <div>
                 <ul className=" md:flex  justify-center items-center md:gap-7 md:mr-10">

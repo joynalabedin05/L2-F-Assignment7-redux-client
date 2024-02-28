@@ -1,8 +1,6 @@
 
 import { useGetAllSupplyQuery } from "../redux/api/baseApi";
 import AllSupplyPosts from "./home/AllSupplyPosts";
-// import AllSupplyPost2 from "./home/AllSupplyPost2";
-
 
 const AllSupply = () => {
     const {data, isLoading} = useGetAllSupplyQuery();

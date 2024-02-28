@@ -11,6 +11,13 @@ import CreateSupplyPost from "../pages/admin/CreateSupplyPost";
 import ProtectedRoute from "../layouts/ProtectedRoute";
 import UpdateSupply from "../pages/admin/UpdateSupply";
 import SingleSupply from "../pages/home/SingleSupply";
+import NotFoundPage from "../pages/NotFoundPage";
+import LeaderBoard from "../pages/LeaderBoard";
+import Community from "../pages/Community";
+import Volunteer from "../pages/Volunteer";
+import AllVolunteer from "../pages/AllVolunteer";
+import CreateTestimonial from "../pages/admin/CreateTestimonial";
+import PieChart from "../pages/admin/PieChart";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +31,30 @@ const router = createBrowserRouter([
             {
                 path: '/supplies',
                 element: <AllSupply></AllSupply>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
+            {
+                path: '/leaderboard',
+                element: <LeaderBoard></LeaderBoard>
+            },
+            {
+                path: '/community',
+                element: <Community></Community>
+            },
+            {
+                path: '/volunteer',
+                element: <Volunteer></Volunteer>
+            },          
+            {
+                path: '/about-us',
+                element: <AllVolunteer></AllVolunteer>
             },          
             {
                 path: '/all-supply/:id',
@@ -43,6 +74,10 @@ const router = createBrowserRouter([
                 loader: ({params})=>fetch(`http://localhost:5000/api/v1/all-supply/${params.id}`)
             },
             {
+                path: 'pieChart',
+                element: <PieChart></PieChart>
+            },
+            {
                 path: 'supplies',
                 element: <AllSupplies></AllSupplies>
             },
@@ -51,19 +86,20 @@ const router = createBrowserRouter([
                 element: <CreateSupplyPost></CreateSupplyPost>
             },
             {
+                path: 'create-testimonial',
+                element: <CreateTestimonial></CreateTestimonial>
+            },
+            {
                 path: 'update-supply/:id',
                 element: <UpdateSupply></UpdateSupply>,
                 loader: ({params})=>fetch(`http://localhost:5000/api/v1/all-supply/${params.id}`)
             },
         ]
     },
+    
     {
-        path: '/login',
-        element: <Login></Login>
-    },
-    {
-        path: '/register',
-        element: <Register></Register>
+        path: '*',
+        element: <NotFoundPage></NotFoundPage>
     },
 ]);
 export default router;

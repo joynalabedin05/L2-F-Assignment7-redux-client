@@ -40,8 +40,8 @@ const Gallery = () => {
       >
         <SwiperSlide><img className='w-full md:h-[500px] rounded-md' src="https://supply.co/cdn/shop/files/supply-87-2-2_3b3794c9-48b3-4a9c-b31f-642708779e48.jpg?v=1622572339" alt="" /></SwiperSlide>
         <SwiperSlide><img className='w-full md:h-[500px] rounded-md' src="https://thumbs.dreamstime.com/z/different-school-supplies-cardboard-box-120911895.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide><img className='w-full md:h-[500px] rounded-md' src="https://cdn.gobankingrates.com/wp-content/uploads/2022/08/teenager-donates-school-supplies_iStock-1387287494.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide><img className='w-full md:h-[500px] rounded-md' src="https://static.vecteezy.com/system/resources/previews/009/455/498/original/donation-boxes-open-cardboard-box-with-food-supplies-medicines-sanitizer-face-masks-humanitarian-aid-help-for-refugees-charity-illustration-in-flat-cartoon-style-vector.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='w-full md:h-[500px] rounded-md' src="https://thumbs.dreamstime.com/b/empty-shelves-grocery-store-supply-chain-disruption-290449437.jpg" alt="" /></SwiperSlide>
+        <SwiperSlide><img className='w-full md:h-[500px] rounded-md' src="https://media.istockphoto.com/id/1227210244/photo/flat-lay-view-at-kitchen-table-full-with-non-perishable-foods-spase-for-text.jpg?s=612x612&w=0&k=20&c=yoKYTbSTaHdBtRjgOUsDYBSB_0B10QxrR6lKH_36Hps=" alt="" /></SwiperSlide>
         <SwiperSlide><img className='w-full md:h-[500px] rounded-md' src="https://www.1stunitedcu.org/assets/files/CxKPowbf/school%20supply%20landing%20page.jpg" alt="" /></SwiperSlide>
         <SwiperSlide><img className='w-full md:h-[500px] rounded-md' src="https://media.licdn.com/dms/image/D5612AQF2Mz3UKjRfKw/article-cover_image-shrink_720_1280/0/1688715743460?e=2147483647&v=beta&t=1knyLHYzanNpYjY1P-rpLlSjQQqOHEpu3nYjd6PcfA4" alt="" /></SwiperSlide>
         
