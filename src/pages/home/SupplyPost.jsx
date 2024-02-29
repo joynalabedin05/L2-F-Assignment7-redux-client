@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const SupplyPost = () => {
     const {data, isLoading} = useGetAllSupplyQuery();
-    console.log(data);
+    // console.log(data);
         if(isLoading){
             return <p>Loading....</p>
         }

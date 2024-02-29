@@ -59,14 +59,14 @@ const Navbar = () => {
         </>
 // w-14 md:w-[80px]
     return (
-        <div className={`bg-gray-50 sticky z-30 p-2 top-0 left-0  ${darkMode ? "bg-black text-white" : ""}`}>
+        <div className={`bg-gray-50 sticky z-30 p-2 top-0 left-0  ${darkMode ? "bg-black text-white" : ""} border`}>
              <div className=" md:flex justify-between items-center  w-full  max-w-[1200px] mx-auto" >
             <div className="">
-                <Link to='/'><img className=" rounded p-1 w-14 md:w-[80px]" src={food} alt="" /></Link>
+                <Link to='/'><img className=" rounded-full w-12 md:w-[60px]" src={food} alt="" /></Link>
                 
             </div>
             <div className="mr-5 ">
-                <ul className="md:flex justify-between items-center gap-3 md:font-bold">
+                <ul className="md:flex justify-between items-center gap-3 md:font-semibold">
                     {navItems}
                 </ul>
             </div>

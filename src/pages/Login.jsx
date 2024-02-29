@@ -32,10 +32,10 @@ const Login = () => {
     return (
         <div className="w-2/4 mx-auto my-20 bg-slate-300 p-5 rounded">
             <h1 className="text-3xl">Please login here?</h1>
-             <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mt-4">
                 <label  htmlFor="email">Email </label>
-                <input className="border p-2 w-full" type="enail" id="email" {...register('email')}  />
+                <input className="border p-2 w-full" type="email" id="email" {...register('email')}  />
             </div>
             <div className="mt-4">
                 <label  htmlFor="password">Password: </label>
@@ -44,7 +44,7 @@ const Login = () => {
             <button className="bg-blue-500 text-white p-2 mt-5 rounded font-bold " type="submit">Login</button>           
         </form>
         <div className="mt-2">
-            <h1>Haven't any Account? 
+            <h1>Havent any Account? 
                 <Link to='/register' className="text-blue-500 text-xl"> Register</Link>
             </h1>
         </div>

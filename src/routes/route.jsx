@@ -17,7 +17,8 @@ import Community from "../pages/Community";
 import Volunteer from "../pages/Volunteer";
 import AllVolunteer from "../pages/AllVolunteer";
 import CreateTestimonial from "../pages/admin/CreateTestimonial";
-import PieChart from "../pages/admin/PieChart";
+import PieCharts from "../pages/admin/PieCharts";
+
 
 const router = createBrowserRouter([
     {
@@ -75,7 +76,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'pieChart',
-                element: <PieChart></PieChart>
+                element: <PieCharts></PieCharts>
             },
             {
                 path: 'supplies',

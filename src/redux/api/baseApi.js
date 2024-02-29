@@ -28,6 +28,16 @@ export const baseApi = createApi({
             }, 
             // invalidatesTags: ['user'] ,       
         }),
+        userDonation: builder.mutation({
+          query: (data)=>{
+            console.log('inside base api',data);
+            return {
+            url: '/donate-amount',
+            method: 'POST',
+            body: data,
+        }
+        }, 
+        }),
         loginUser: builder.mutation({
           query: (data)=>{
             console.log('inside base api',data);
@@ -43,7 +53,7 @@ export const baseApi = createApi({
                url: '/users',
                method: 'GET',             
             }),
-            invalidatesTags: ['user'] ,       
+            // invalidatesTags: ['user'] ,       
 
         }),
         getAllSupply: builder.query({
@@ -51,9 +61,9 @@ export const baseApi = createApi({
                url: '/all-supply',
                method: 'GET',             
             }),
-            invalidatesTags: ['user'] ,
+            // invalidatesTags: ['user'] ,
         }),
     }),
   })
 
-  export const {useRegisterUserMutation ,useLoginUserMutation, useGetAlluserQuery, useGetAllSupplyQuery} = baseApi;
+  export const {useRegisterUserMutation ,useLoginUserMutation, useGetAlluserQuery, useGetAllSupplyQuery, useUserDonationMutation} = baseApi;
