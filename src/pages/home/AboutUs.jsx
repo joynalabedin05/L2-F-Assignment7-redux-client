@@ -16,7 +16,7 @@ const AboutUs = () => {
                 <p className="my-5">Maersk provides a range of integrated supply chain and <br /> logistics products designed to meet the needs of all types of businesses. Contact us today and learn how.</p>
                 
             </div>
-        <div className={`bg-gray-50 ${darkMode ? "bg-black text-white" : ""} p-5 my-14 `}>
+        <div className={` ${darkMode ? "bg-black text-white" : "bg-gray-50"} p-5 my-14 `}>
 
         <div className="md:flex justify-between">
             <div className="w-1/2 flex items-center">

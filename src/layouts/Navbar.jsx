@@ -59,7 +59,7 @@ const Navbar = () => {
         </>
 // w-14 md:w-[80px]
     return (
-        <div className={`bg-gray-50 sticky z-30 p-2 top-0 left-0  ${darkMode ? "bg-black text-white" : ""} border`}>
+        <div className={` sticky z-30 p-2 top-0 left-0  ${darkMode ? "bg-black text-white" : "bg-slate-50"}  border`}>
              <div className=" md:flex justify-between items-center  w-full  max-w-[1200px] mx-auto" >
             <div className="">
                 <Link to='/'><img className=" rounded-full w-12 md:w-[60px]" src={food} alt="" /></Link>

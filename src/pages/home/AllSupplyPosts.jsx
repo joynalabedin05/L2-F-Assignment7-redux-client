@@ -14,7 +14,7 @@ const AllSupplyPosts = ({item}) => {
     })
     const {category, _id , image, title, quantity} =item;
     return (
-        <div data-aos="fade-down" className={` p-5  ${darkMode ? "bg-black text-white" : ""} bg-gray-100 rounded`}>
+        <div data-aos="fade-down" className={` p-5  ${darkMode ? "bg-black text-white" : "bg-gray-100"}  rounded`}>
                 <img className=' md:w-[350px] md:h-[300px] rounded ' src={image} alt="" />
                 <div className='w-3/4 mx-auto px-3 mt-5'>
                 <h1 className='mt-5 font-semi-bold text-2xl'>Title: <span className='font-normal'>{title}</span> </h1>

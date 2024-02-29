@@ -8,7 +8,7 @@ const Footer = () => {
     const { darkMode } = useSelector((store) => store.theme);
 
     return (
-        <div className={`bg-gray-100 ${darkMode ? "bg-black text-white" : ""} p-3 md:px-14 md:py-10`}>
+        <div className={` ${darkMode ? "bg-black text-white" : "bg-gray-100"} p-3 md:px-14 md:py-10`}>
             <div className="grid md:grid-cols-3 lg:grid-cols-5">
             <div>
                 <img className="w-[100px] rounded" src={food} alt="" />

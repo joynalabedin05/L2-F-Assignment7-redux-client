@@ -2,34 +2,39 @@
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import { useRegisterUserMutation } from "../redux/api/baseApi";
+import { useCreateVolunteerMutation } from "../redux/api/baseApi";
+import Swal from "sweetalert2";
 const Volunteer = () => {
     const {darkMode} = useSelector((store)=>store.theme);
 
+    const [createVolunteer]  = useCreateVolunteerMutation();
     const navigate = useNavigate();
 
     const {register, handleSubmit} = useForm();
-
-    // const [registerUser, ] = useRegisterUserMutation();
 
     const onSubmit =  (data) =>{
         console.log(data);
         const userInfo = {
             name: data.name,
             email: data.email,
-            password: data.password,
             phoneNumber: data.phoneNumber,
             location: data.location,
         }
-        // registerUser(userInfo);
-        alert('register user successgully');
-        // navigate('/about-us');
+        createVolunteer(userInfo);
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Register as Volunteer successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        navigate('/about-us');
     }
     return (
         <div className="mt-14">
                 <h1 className="text-sky-700 text-4xl text-center ">Register as Volunteer here :</h1>
 
-            <div className={`w-2/4 mx-auto my-10 ${darkMode ? "bg-black text-white" : ""} bg-gray-50 p-4 rounded`}>
+            <div className={`w-2/4 mx-auto my-10 ${darkMode ? "bg-black text-white" : "bg-gray-50"}  p-4 rounded`}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mt-3">
                     <label  htmlFor="name">UserName </label>

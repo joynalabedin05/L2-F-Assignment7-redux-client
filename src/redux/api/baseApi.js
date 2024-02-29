@@ -17,6 +17,7 @@ export const baseApi = createApi({
     baseQuery: baseQuery,
     tagTypes: ['user'],
     endpoints: (builder) => ({
+        // user related api
        registerUser: builder.mutation({
             query: (data)=>{
                 console.log('inside base api',data);
@@ -28,6 +29,27 @@ export const baseApi = createApi({
             }, 
             // invalidatesTags: ['user'] ,       
         }),
+        loginUser: builder.mutation({
+            query: (data)=>{
+              console.log('inside base api',data);
+              return {
+              url: '/login',
+              method: 'POST',
+              body: data,
+          }
+          }, 
+          }),
+          getAlluser: builder.query({
+            query: ()=>({
+               url: '/users',
+               method: 'GET',             
+            }),
+            // invalidatesTags: ['user'] ,       
+
+        }),
+
+        // donation related api
+
         userDonation: builder.mutation({
           query: (data)=>{
             console.log('inside base api',data);
@@ -38,24 +60,77 @@ export const baseApi = createApi({
         }
         }, 
         }),
-        loginUser: builder.mutation({
-          query: (data)=>{
+        getAllDonation: builder.query({
+            query: ()=>({
+               url: '/all-donation',
+               method: 'GET',             
+            }),
+            // invalidatesTags: ['user'] ,
+        }),
+
+        createVolunteer: builder.mutation({
+            query: (data)=>{
             console.log('inside base api',data);
             return {
-            url: '/login',
+            url: '/create-volunteer',
             method: 'POST',
             body: data,
         }
         }, 
+        invalidatesTags: ['user'],
         }),
-        getAlluser: builder.query({
+
+        getAllVolunteer: builder.query({
             query: ()=>({
-               url: '/users',
+               url: '/volunteers',
                method: 'GET',             
             }),
-            // invalidatesTags: ['user'] ,       
-
+            providesTags: ['user'] ,
         }),
+
+        // testimoniaos related api
+
+        createTestimonial: builder.mutation({
+            query: (data)=>{
+            console.log('inside base api',data);
+            return {
+            url: '/create-testimonial',
+            method: 'POST',
+            body: data,
+        }
+        }, 
+        invalidatesTags: ['user'],
+        }),
+
+        getAllTestimonial: builder.query({
+            query: ()=>({
+               url: '/testimonials',
+               method: 'GET',             
+            }),
+            providesTags: ['user'] ,
+        }),
+        // community related api
+
+        createCommunityPost: builder.mutation({
+            query: (data)=>{
+            console.log('inside base api',data);
+            return {
+            url: '/create-community-post',
+            method: 'POST',
+            body: data,
+        }
+        }, 
+        invalidatesTags: ['user'],
+        }),
+
+        getAllCommunityPost: builder.query({
+            query: ()=>({
+               url: '/community-posts',
+               method: 'GET',             
+            }),
+            providesTags: ['user'] ,
+        }),
+
         getAllSupply: builder.query({
             query: ()=>({
                url: '/all-supply',
@@ -63,7 +138,20 @@ export const baseApi = createApi({
             }),
             // invalidatesTags: ['user'] ,
         }),
+        
     }),
   })
 
-  export const {useRegisterUserMutation ,useLoginUserMutation, useGetAlluserQuery, useGetAllSupplyQuery, useUserDonationMutation} = baseApi;
+  export const {useRegisterUserMutation,
+    useLoginUserMutation, 
+    useGetAlluserQuery, 
+    useGetAllSupplyQuery, 
+    useUserDonationMutation,
+    useGetAllDonationQuery,
+    useCreateVolunteerMutation,
+    useGetAllVolunteerQuery,
+    useCreateTestimonialMutation,
+    useGetAllTestimonialQuery,
+    useCreateCommunityPostMutation,
+    useGetAllCommunityPostQuery,
+    } = baseApi;
