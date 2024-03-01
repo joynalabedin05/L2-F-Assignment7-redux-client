@@ -4,7 +4,7 @@ import { useLoginUserMutation } from "../redux/api/baseApi";
 import { verifyToken } from "../utils/verifyToken";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/features/authSlice";
-
+import Swal from "sweetalert2";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -25,12 +25,18 @@ const Login = () => {
         // console.log(user);
         
         dispatch(setUser({user: user, token: res.token}));
-        alert('user login successgully');     
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "User Login successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });   
         navigate("/");
 
     }
     return (
-        <div className="w-2/4 mx-auto my-20 bg-slate-300 p-5 rounded">
+        <div className="mx-5 md:w-2/4 md:mx-auto my-10 md:my-20 bg-slate-300 p-5 rounded">
             <h1 className="text-3xl">Please login here?</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mt-4">

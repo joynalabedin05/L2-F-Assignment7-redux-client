@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/v1",
+    baseUrl: "https://l2-b2-frontend-path-assignment-7-server-starter-pack.vercel.app/api/v1",
     credentials: "include",
     prepareHeaders: (headers, {getState})=>{
         const token = (getState()).auth.token;
@@ -43,8 +43,7 @@ export const baseApi = createApi({
             query: ()=>({
                url: '/users',
                method: 'GET',             
-            }),
-            // invalidatesTags: ['user'] ,       
+            }),       
 
         }),
 
@@ -59,13 +58,14 @@ export const baseApi = createApi({
             body: data,
         }
         }, 
+        invalidatesTags: ['user'],
         }),
         getAllDonation: builder.query({
             query: ()=>({
                url: '/all-donation',
                method: 'GET',             
             }),
-            // invalidatesTags: ['user'] ,
+            providesTags: ['user'] ,
         }),
 
         createVolunteer: builder.mutation({
@@ -136,7 +136,18 @@ export const baseApi = createApi({
                url: '/all-supply',
                method: 'GET',             
             }),
-            // invalidatesTags: ['user'] ,
+            providesTags: ['user'] ,
+        }),
+        updateAllSupply: builder.mutation({
+            query: (data)=>{
+                console.log('inside base api',data);
+                return {
+                url: '/create-community-post',
+                method: 'POST',
+                body: data,
+            }
+            }, 
+            invalidatesTags: ['user'] ,
         }),
         
     }),

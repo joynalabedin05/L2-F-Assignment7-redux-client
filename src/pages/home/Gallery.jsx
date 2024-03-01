@@ -1,12 +1,10 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import './styles.css';
-
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useRef } from 'react';
 const Gallery = () => {
@@ -19,9 +17,9 @@ const Gallery = () => {
   return (
     <>
     <div className="text-center">
-                <h1 className="text-4xl font-bold">Gallery items</h1>
-                <p className='mt-4 mb-8 '>“ broad range of value added capabilities provided under the SCM services can <br /> help achieve your business objectives with reliability, speed, agility, resilience, cost. <br /> ornare viverra your business objective. ”</p>
-            </div>  
+          <h1 className="text-3xl md:text-4xl font-bold">Gallery items</h1>
+          <p className='m-3 mt-4 mb-8 '>“ broad range of value added capabilities provided under the SCM services can <br /> help achieve your business objectives with reliability, speed, agility, resilience, cost. <br /> ornare viverra your business objective. ”</p>
+        </div>  
       <Swiper
       
         spaceBetween={30}
@@ -47,7 +45,7 @@ const Gallery = () => {
         
         <div className="autoplay-progress" slot="container-end">
         <svg ref={progressCircle}>
-             {/* <circle cx="2" cy="2" r="2"></circle>  */}
+             <circle cx="2" cy="2" r="2"></circle> 
           </svg>
           <span ref={progressContent}></span>
         </div>

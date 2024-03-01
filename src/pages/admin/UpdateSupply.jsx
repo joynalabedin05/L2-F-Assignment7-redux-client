@@ -11,7 +11,7 @@ const UpdateSupply = () => {
     const newItem = { title, category, quantity, description};
     console.log(newItem);
 
-    fetch(`http://localhost:5000/api/v1/update-supply/${_id}`,{
+    fetch(`https://l2-b2-frontend-path-assignment-7-server-starter-pack.vercel.app/api/v1/update-supply/${_id}`,{
         method: 'PUT',
         headers: {
         'content-type': 'application/json'

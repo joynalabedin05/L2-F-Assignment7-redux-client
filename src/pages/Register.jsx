@@ -2,12 +2,9 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegisterUserMutation } from "../redux/api/baseApi";
 
-
 const Register = () => {
     const navigate = useNavigate();
-
     const {register, handleSubmit} = useForm();
-
     const [registerUser, ] = useRegisterUserMutation();
 
     const onSubmit =  (data) =>{
@@ -22,7 +19,7 @@ const Register = () => {
         navigate('/login');
     }
     return (
-        <div className="w-2/4 mx-auto my-20 bg-slate-300 p-5 rounded">
+        <div className="m-5 md:w-2/4 md:mx-auto my-10 md:my-20 bg-slate-300 p-5 rounded">
         <h1 className="text-3xl">Please Register here?</h1>
          <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mt-3">
@@ -38,12 +35,12 @@ const Register = () => {
             <input className="border p-2 w-full" type="text" id="password"  {...register('password')}/>
         </div>
         <button className="bg-blue-500 text-white p-2 mt-5 rounded font-bold " type="submit">Register</button>           
-    </form>
-    <div className="mt-3">
-        <h1>Already have an Account? 
-            <Link to='/login' className="text-blue-500 text-lg"> Login</Link>
-        </h1>
-    </div>
+        </form>
+        <div className="mt-3">
+            <h1>Already have an Account? 
+                <Link to='/login' className="text-blue-500 text-lg"> Login</Link>
+            </h1>
+        </div>
     </div>
     );
 };

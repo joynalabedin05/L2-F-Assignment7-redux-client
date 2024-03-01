@@ -4,14 +4,11 @@ import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const AllSupplies = () => {
-
   const {data, refetch, isLoading} = useGetAllSupplyQuery();
   console.log(data);
       if(isLoading){
           return <p>Loading....</p>
       }
-
-
       const handleDelete = (_id)=>{
         Swal.fire({
             title: 'Are you sure?',
@@ -23,7 +20,7 @@ const AllSupplies = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-             fetch(`http://localhost:5000/api/v1/all-supply/${_id}`,{
+             fetch(`https://l2-b2-frontend-path-assignment-7-server-starter-pack.vercel.app/api/v1/all-supply/${_id}`,{
                 method:'DELETE', 
              })
              .then(res=>res.json())
@@ -92,9 +89,7 @@ const AllSupplies = () => {
                     <td>
                     <Link to='/dashboard/create-supply' className="p-2 rounded bg-sky-600 text-white">Add</Link>
                     </td>
-                    {/* <td>
-                    <button className=""><FaEdit color="green" size={28} /></button>
-                    </td> */}
+            
                     <td>
                     <button className="btn" onClick={()=>document.getElementById('my_modal_4').showModal()}><FaEdit color="green" size={20} /></button>
                     <dialog id="my_modal_4" className="modal h-screen">

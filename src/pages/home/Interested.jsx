@@ -2,10 +2,10 @@
 import { FaMailBulk } from "react-icons/fa";
 const Interested = () => {
     return (
-        <div className="my-20">
-            <h1 className="text-5xl font-semi-bold">Are you interested?</h1>
-            <div className="md:flex gap-7 border p-5 mt-7 w-1/2 md:mx-auto md:mr-40 ml-3">
-                <div className="flex mt-5">
+        <div className=" md:flex m-5 md:my-20 ">
+            <h1 className="w-1/2 text-3xl md:text-5xl font-semi-bold">Are you interested?</h1>
+            <div className="md:flex justify-end gap-7 border w-full md:w-1/2 p-5 mt-5 md:mt-20 mr-48 ">
+                <div className="flex  mt-5">
                 <FaMailBulk size={40} />
                 </div>
                 <div>

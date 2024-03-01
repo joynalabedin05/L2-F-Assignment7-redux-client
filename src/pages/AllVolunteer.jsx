@@ -1,18 +1,16 @@
 import { useSelector } from "react-redux";
 import { useGetAllVolunteerQuery } from "../redux/api/baseApi";
 
-
 const AllVolunteer = () => {
     const {darkMode} = useSelector((store)=>store.theme);
     const {data, isLoading} = useGetAllVolunteerQuery();
     if(isLoading){
         return <p>Loading..</p>
     }
-
     return (
-        <div className="w-3/4 mx-auto  my-10 rounded-md">
-            <h1 className="text-sky-700 text-4xl text-center">Meet All Our Volunteers :</h1>
-            <div className={`w-3/4 mx-auto my-10 ${darkMode ? "bg-black text-white" : "bg-gray-50 "} p-4 rounded`}>
+        <div className="  my-10 rounded-md">
+            <h1 className="text-sky-700 text-3xl md:text-4xl text-center">Meet All Our Volunteers :</h1>
+            <div className={`overflow-x-auto p-10 my-10 ${darkMode ? "bg-black text-white" : "bg-gray-50 "} rounded`}>
             <table className="table">
                 {/* head */}
                 <thead>

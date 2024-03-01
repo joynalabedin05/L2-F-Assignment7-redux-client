@@ -31,10 +31,10 @@ const Volunteer = () => {
         navigate('/about-us');
     }
     return (
-        <div className="mt-14">
-                <h1 className="text-sky-700 text-4xl text-center ">Register as Volunteer here :</h1>
+        <div className="m-1 mt-5 md:mt-14">
+                <h1 className="text-sky-700 text-3xl md:text-4xl text-center ">Register as Volunteer here :</h1>
 
-            <div className={`w-2/4 mx-auto my-10 ${darkMode ? "bg-black text-white" : "bg-gray-50"}  p-4 rounded`}>
+            <div className={`md:w-2/4 mx-auto my-5 md:my-10 ${darkMode ? "bg-black text-white" : "bg-gray-50"}  p-4 rounded`}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mt-3">
                     <label  htmlFor="name">UserName </label>

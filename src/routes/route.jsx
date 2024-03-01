@@ -60,7 +60,7 @@ const router = createBrowserRouter([
             {
                 path: '/all-supply/:id',
                 element: <SingleSupply></SingleSupply>,
-                loader: ({params})=>fetch(`http://localhost:5000/api/v1/all-supply/${params.id}`)
+                loader: ({params})=>fetch(`https://l2-b2-frontend-path-assignment-7-server-starter-pack.vercel.app/api/v1/all-supply/${params.id}`)
             },          
         ],
     },
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <AdminDashboard></AdminDashboard>,
-                loader: ({params})=>fetch(`http://localhost:5000/api/v1/all-supply/${params.id}`)
+                loader: ({params})=>fetch(`https://l2-b2-frontend-path-assignment-7-server-starter-pack.vercel.app/api/v1/all-supply/${params.id}`)
             },
             {
                 path: 'pieChart',
@@ -93,7 +93,7 @@ const router = createBrowserRouter([
             {
                 path: 'update-supply/:id',
                 element: <UpdateSupply></UpdateSupply>,
-                loader: ({params})=>fetch(`http://localhost:5000/api/v1/all-supply/${params.id}`)
+                loader: ({params})=>fetch(`https://l2-b2-frontend-path-assignment-7-server-starter-pack.vercel.app/api/v1/all-supply/${params.id}`)
             },
         ]
     },

@@ -16,14 +16,13 @@ const CreateSupplyPost = () => {
         })
             .then(res => res.json())
             .then(imgResponse => {
-                // console.log(imgResponse);
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
                     // console.log(data,imgURL);
                     const { title, category, quantity, description } = data;
                     const newItem = { title, category, quantity, description, image: imgURL };
                     console.log(newItem);
-                    fetch('http://localhost:5000/api/v1/create-supply',{
+                    fetch('https://l2-b2-frontend-path-assignment-7-server-starter-pack.vercel.app/api/v1/create-supply',{
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -42,7 +41,7 @@ const CreateSupplyPost = () => {
             })
     };
     return (
-        <div className="w-1/2 mx-auto">
+        <div className="md:w-1/2 mx-auto">
             <h1 className="text-3xl font-semibold text-center">Create Supply Post:</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex mt-5">

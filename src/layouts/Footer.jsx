@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 import food from '../assets/healthyfood.jpg';
 import { useSelector } from "react-redux";
 
-
 const Footer = () => {
     const { darkMode } = useSelector((store) => store.theme);
-
     return (
         <div className={` ${darkMode ? "bg-black text-white" : "bg-gray-100"} p-3 md:px-14 md:py-10`}>
-            <div className="grid md:grid-cols-3 lg:grid-cols-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 m-2 gap-5">
             <div>
-                <img className="w-[100px] rounded" src={food} alt="" />
+                <img className="w-[120px] md:w-[100px] rounded-full" src={food} alt="" />
             </div>
                 <div className="mt-4 md:mt-1">
                     <ul className="flex flex-col">
